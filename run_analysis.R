@@ -1,4 +1,6 @@
 #Loading data.
+library(dplyr)
+library(plyr)
 labels<-read.table("UCI HAR Dataset/activity_labels.txt")
 features<-read.table("UCI HAR Dataset/features.txt")
 
@@ -32,7 +34,7 @@ names(data)<-feat5
 
 #Extracting the data on means and standard deviations.
 
-v1<-grep("mean()",feat)
+v1<-grep("mean()[^F]",feat)
 v2<-grep("std()",feat)
 v<-c(union(v1,v2),562,563)
 
@@ -43,5 +45,11 @@ datanew<-data[v]
 for(i in 1:6){
   datanew$activity[datanew$activity==i]<-as.character(labels[i,2])}
 
-library(plyr)
-tidy<-ddply(datanew,c("subject","activity"),colwise(mean))
+
+datanew2<-arrange(datanew,activity,subject)
+tidy<-ddply(datanew,c("activity","subject"),colwise(mean))
+
+
+
+#Exporting final tidy dataset into a txt file
+write.table(tidy, "tidydata.txt",row.names=FALSE) 

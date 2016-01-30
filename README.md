@@ -5,7 +5,7 @@ This repo contains the following files:
 =========================================
 
 - 'README.md'
-- 'tidydata.csv': the tidy dataset.
+- 'tidydata.txt': the tidy dataset.
 
 - 'run_analysis.R': script that produces the above tidy dataset
 

@@ -17,7 +17,7 @@ Shaping and cleaning the data
 	- Then only the measurements  mean and standard deviation are extracted using the vector v.  This produces the data.frame 'datanew'.
 	- The numeric labels in data corresponding to the activies are then replaced by the corresponding descriptive ones using the data.frame 'labels'.
 	- The means of these measurements are taken according to activity and then subject are taken to produce the final dataset, 'tidy'.
-	- The dataset is finally exported to 'tidydata.csv'
+	- The dataset is finally exported to 'tidydata.txt'
 	
 Exporting the file
-	The data.frame 'tidy' is exported to the file 'tidydata.csv.'	
+	The data.frame 'tidy' is exported to the file 'tidydata.txt.'	
